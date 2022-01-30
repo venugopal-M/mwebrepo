@@ -25,7 +25,7 @@ pipeline {
 
 		sshagent(['deploy_user']) {
 
-   		sh "scp -o StrictHostKeyChecking=no webapp/target/webapp.war  ec2-user@3.83.133.180 :/opt/apache-tomcat-8.5.35/webapps"
+   		sh "scp -o StrictHostKeyChecking=no webapp/target/webapp.war  ec2-user@3.83.133.180:/opt/apache-tomcat-8.5.35/webapps"
 		echo 'Code deployment done sucessfully.'
 		  }
 		
