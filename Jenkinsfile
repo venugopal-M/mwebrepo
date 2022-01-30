@@ -4,7 +4,7 @@ pipeline {
         PATH = "/opt/maven/bin:$PATH"
     }
     stages {
-       stage('CodeCheckOut) {
+       stage('CodeCheckOut') {
            
                        steps {
                
