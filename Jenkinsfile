@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Code Checkout') {
             steps {
-                git credentialsId: 'git_credentials', url: 'https://github.com/shashikanth-t/mwebrepo.git'
+                git credentialsId: 'git_credentials', url: 'https://github.com/venugopal-M/mwebrepo.git'
                 echo 'code checkout done sucessfully.'
             }
 		}
@@ -19,7 +19,7 @@ pipeline {
 	    stage('Code Deploy') {
             steps {
 		sshagent(['deploy_user']) {
-   		sh "scp -o StrictHostKeyChecking=no webapp/target/webapp.war  ec2-user@3.93.3.196:/opt/apache-tomcat-9.0.60/webapps"
+   		sh "scp -o StrictHostKeyChecking=no webapp/target/webapp.war  ec2-user@18.222.132.97:/opt/apache-tomcat-9.0.59/webapps"
 		  }
 		echo 'Stage-3 done sucessfully.'
 		}
